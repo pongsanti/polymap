@@ -5,7 +5,7 @@
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   <agm-polygon id="p1" [paths]="paths" fillColor="olive" [fillOpacity]="0.5" strokeColor="black" [strokeOpacity]="0.6"
-    [strokeWeight]="2" [visible]="true" (polyClick)="onPolylClick('p1', $event)"></agm-polygon>
+    [strokeWeight]="2" (polyClick)="onPolylClick('p1', $event)"></agm-polygon>
   <agm-polygon id="p2" [paths]="paths2" fillColor="coral" [fillOpacity]="0.5" strokeColor="black" [strokeOpacity]="0.6"
-    [strokeWeight]="2" [visible]="true" (polyClick)="onPolylClick('p2', $event)"></agm-polygon>
+    [strokeWeight]="1" [visible]="true" (polyClick)="onPolylClick('p2', $event)"></agm-polygon>
 </agm-map>
