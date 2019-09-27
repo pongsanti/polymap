@@ -2,8 +2,8 @@
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="10" (boundsChange)="onBoundsChange($event)">
+  <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> -->
   <agm-polygon id="p1" [paths]="paths" fillColor="olive" [fillOpacity]="0.5" strokeColor="black" [strokeOpacity]="0.6"
     [strokeWeight]="2" (polyClick)="onPolylClick('p1', $event)"></agm-polygon>
   <agm-polygon id="p2" [paths]="paths2" fillColor="coral" [fillOpacity]="0.5" strokeColor="black" [strokeOpacity]="0.6"

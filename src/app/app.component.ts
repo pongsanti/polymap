@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { paths } from './paths';
 import { paths2 } from './paths2';
-import { LatLngLiteral, PolyMouseEvent } from '@agm/core';
+import { LatLngLiteral, PolyMouseEvent, LatLngBounds } from '@agm/core';
 
 @Component({
   selector: 'app-root',
@@ -24,5 +24,11 @@ export class AppComponent implements OnInit {
     console.log(id);
     console.log(e.latLng.lat());
     console.log(e.latLng.lng());
+  }
+
+  onBoundsChange(b: LatLngBounds) {
+    const ne = b.getNorthEast();
+    const sw = b.getSouthWest();
+    console.log(`min lng = ${sw.lng()}, min lat = ${sw.lat()}, max lng = ${ne.lng()}, max lat = ${ne.lat()}`);
   }
 }
